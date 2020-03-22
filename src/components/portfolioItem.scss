@@ -1,6 +1,21 @@
 .portfolio-item {
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    .portfolio-item__hover-background {
+      background: blue;
+    }
+
+    .portfolio-item__image {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.portfolio-item__image {
+  transition-duration: 300ms;
 }
 
 .portfolio-item__triangle {
@@ -27,7 +42,7 @@
 }
 
 .portfolio-item__hover-background {
-  transition: background-color 1000ms linear;
+  transition: background-color 300ms linear;
   opacity: 0.3;
   position: absolute;
   top: 0;

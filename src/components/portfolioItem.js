@@ -1,11 +1,11 @@
-import './portfolioItem.css';
+import './portfolioItem.scss';
 
 import PropTypes from 'prop-types';
 import React from 'react';
 
 const PortfolioItem = ({ img, alt, title }) => (
   <section className="portfolio-item">
-    <img src={img} alt={alt}></img>
+    <img className="portfolio-item__image" src={img} alt={alt}></img>
     <div className="portfolio-item__hover-background"></div>
     <div className="portfolio-item__triangle"></div>
     <figcaption className="portfolio-item__title">{title}</figcaption>
