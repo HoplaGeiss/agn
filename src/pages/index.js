@@ -1,9 +1,9 @@
 import React from 'react';
 
-import AgnCarousel from '../components/carousel';
-import Intro from '../components/intro';
-import Portfolio from '../components/portfolio';
-import SEO from '../components/seo';
+import AgnCarousel from '../components/landing/carousel';
+import Intro from '../components/landing/intro';
+import Portfolio from '../components/landing/portfolio';
+import SEO from '../components/shared/seo';
 
 const IndexPage = () => (
   <main>
