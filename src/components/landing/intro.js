@@ -1,4 +1,4 @@
-import './intro.css';
+import './intro.scss';
 
 import React from 'react';
 

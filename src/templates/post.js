@@ -26,16 +26,6 @@ export const query = graphql`
       frontmatter {
         title
         date
-        cover {
-          childImageSharp {
-            resize(width: 800, quality: 90) {
-              src
-            }
-          }
-        }
-      }
-      fields {
-        slug
       }
     }
     allFile(

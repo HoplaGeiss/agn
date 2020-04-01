@@ -1,7 +1,17 @@
+@import "./src/styles/layout.scss";
+$max-width: 400px;
+
 .portfolio-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  margin: 10px 0;
+  width: 100%;
+
+  @media only screen and (min-width: $sm) {
+    max-width: $max-width;
+    margin: 10px;
+  }
 
   &:hover {
     .portfolio-item__hover-background {
