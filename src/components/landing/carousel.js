@@ -19,7 +19,7 @@ const AgnCarousel = () => {
           node {
             id
             childImageSharp {
-              fluid(quality: 90, maxWidth: 1200) {
+              fluid(quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }

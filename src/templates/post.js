@@ -1,3 +1,5 @@
+import './post.scss';
+
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
@@ -10,9 +12,14 @@ export default ({ data }) => {
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      <div>
+      <div className="posts__image-list">
         {data.allFile.edges.map(({ node }, index) => (
-          <Img key={index} fluid={node.childImageSharp.fluid} />
+          <Img
+            key={index}
+            fluid={node.childImageSharp.fluid}
+            imgStyle={{ objectFit: "contain" }}
+            className="posts__image"
+          />
         ))}
       </div>
     </div>
