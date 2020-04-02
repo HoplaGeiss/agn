@@ -17,8 +17,9 @@ const AgnCarousel = () => {
       ) {
         edges {
           node {
+            id
             childImageSharp {
-              fluid(quality: 90) {
+              fluid(quality: 90, maxWidth: 1200) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -29,7 +30,12 @@ const AgnCarousel = () => {
   `)
 
   const CarouselItems = data.allFile.edges.map(edge => {
-    return <CarouselItem img={edge.node.childImageSharp}></CarouselItem>
+    return (
+      <CarouselItem
+        img={edge.node.childImageSharp}
+        key={edge.node.id}
+      ></CarouselItem>
+    )
   })
 
   return <Carousel autoplay>{CarouselItems}</Carousel>
