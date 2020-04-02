@@ -1,23 +1,38 @@
 import './carousel.css';
 
 import { Carousel } from 'antd';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
-const AgnCarousel = () => (
-  <Carousel autoplay>
-    <div>
-      <h3>1</h3>
-    </div>
-    <div>
-      <h3>2</h3>
-    </div>
-    <div>
-      <h3>3</h3>
-    </div>
-    <div>
-      <h3>4</h3>
-    </div>
-  </Carousel>
-)
+import CarouselItem from './carouselItem';
+
+const AgnCarousel = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allFile(
+        filter: {
+          sourceInstanceName: { eq: "images" }
+          relativeDirectory: { eq: "carousel" }
+        }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              fluid(quality: 90) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  const CarouselItems = data.allFile.edges.map(edge => {
+    return <CarouselItem img={edge.node.childImageSharp}></CarouselItem>
+  })
+
+  return <Carousel autoplay>{CarouselItems}</Carousel>
+}
 
 export default AgnCarousel

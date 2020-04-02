@@ -1,10 +1,8 @@
 @import "~antd/dist/antd.css";
 
 .ant-carousel .slick-slide {
-  text-align: center;
   height: 100vh;
   line-height: 100vh;
-  background: #364d79;
 }
 
 .ant-carousel .slick-slide h3 {
