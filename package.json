@@ -4,13 +4,14 @@
   "description": "Agn photography website",
   "version": "0.1.0",
   "author": {
-    "name" : "Gabriel Muller",
-    "email" : "gabriel.muller.12@gmail.com"
+    "name": "Gabriel Muller",
+    "email": "gabriel.muller.12@gmail.com"
   },
   "dependencies": {
     "antd": "^4.0.3",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.3.1",
+    "gatsby-plugin-crisp-chat": "^3.2.2",
     "gatsby-plugin-manifest": "^2.2.48",
     "gatsby-plugin-offline": "^3.0.41",
     "gatsby-plugin-react-helmet": "^3.1.24",
