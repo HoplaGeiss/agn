@@ -1,14 +1,20 @@
 import './post.scss';
 
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+
+import LeftArrow from '../components/shared/left-arrow';
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <div>
-      <div>
+    <div className="posts">
+      <div className="posts__header">
+        <Link to="/">
+          <LeftArrow></LeftArrow>
+        </Link>
+
         <h1>{post.frontmatter.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
